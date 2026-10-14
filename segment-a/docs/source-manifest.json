@@ -1,0 +1,67 @@
+{
+  "files": [
+    {
+      "repository": "digital-Alchemy-mcmg/A-A2_multicompiler",
+      "ref": "191cf1c04c2ac36a2577f2938cb33ca9ba2d2564",
+      "source": "webapp/src/components/compiler.ts",
+      "target": "src/vendor/scout/compiler.ts",
+      "blob": "8492bd9827de63dd98ffc2b38fcbce1a688866ef"
+    },
+    {
+      "repository": "digital-Alchemy-mcmg/A-A2_multicompiler",
+      "ref": "191cf1c04c2ac36a2577f2938cb33ca9ba2d2564",
+      "source": "webapp/src/components/types.ts",
+      "target": "src/vendor/scout/types.ts",
+      "blob": "1ee016a5b79ea59a99e0c38653af87a6f6546264"
+    },
+    {
+      "repository": "digital-Alchemy-mcmg/A-A2_multicompiler",
+      "ref": "191cf1c04c2ac36a2577f2938cb33ca9ba2d2564",
+      "source": "webapp/src/components/batch-compiler.ts",
+      "target": "src/vendor/scout/batch-compiler.ts",
+      "blob": "de947c36efc37baf0043b5da39a57f71f3d45881"
+    },
+    {
+      "repository": "digital-Alchemy-mcmg/A-A2_multicompiler",
+      "ref": "191cf1c04c2ac36a2577f2938cb33ca9ba2d2564",
+      "source": "webapp/src/components/batch-ingress-adapter.ts",
+      "target": "src/vendor/scout/batch-ingress-adapter.ts",
+      "blob": "68aa18b91b134dc8001128a5b3201fa328f3edae"
+    },
+    {
+      "repository": "digital-Alchemy-mcmg/A-A2_multicompiler",
+      "ref": "191cf1c04c2ac36a2577f2938cb33ca9ba2d2564",
+      "source": "webapp/src/components/observation-artifacts.ts",
+      "target": "src/vendor/scout/observation-artifacts.ts",
+      "blob": "d76c9de495e2d20bbc0ab7024bd74cbf829814f8"
+    },
+    {
+      "repository": "digital-Alchemy-mcmg/A-A2_multicompiler",
+      "ref": "191cf1c04c2ac36a2577f2938cb33ca9ba2d2564",
+      "source": "webapp/src/components/decomposition-engine.ts",
+      "target": "src/vendor/scout/decomposition-engine.ts",
+      "blob": "c528d95f70f562f8f74183d4ae9eaaa6fe27ed83"
+    },
+    {
+      "repository": "digital-Alchemy-mcmg/Envoy_Diplomat",
+      "ref": "d1b8348ded0190cccc7017526b8a16c84005db2a",
+      "source": "src/b/authority/envelope.ts",
+      "target": "src/vendor/b-ingress/envelope.ts",
+      "blob": "ac0f1208fdf5719f5a387f67a1c1fba36289efef"
+    },
+    {
+      "repository": "digital-Alchemy-mcmg/Envoy_Diplomat",
+      "ref": "d1b8348ded0190cccc7017526b8a16c84005db2a",
+      "source": "src/b/authority/sidecar.ts",
+      "target": "src/vendor/b-ingress/sidecar.ts",
+      "blob": "2060ff86156aa5aa849279165a3cf38edff0f5db"
+    },
+    {
+      "repository": "digital-Alchemy-mcmg/Envoy_Diplomat",
+      "ref": "d1b8348ded0190cccc7017526b8a16c84005db2a",
+      "source": "src/b/types.ts",
+      "target": "src/vendor/types.ts",
+      "blob": "530dc352b0c014462a1d0c07ddd9357bd7d3026a"
+    }
+  ]
+}

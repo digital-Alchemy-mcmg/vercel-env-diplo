@@ -1,0 +1,9 @@
+import {it,expect,vi,afterEach} from 'vitest';
+import {BrowserBridge} from '../src/receiver';
+import {identity} from 'b-build:identity';
+import {SegmentA} from '../../segment-a/src/core/pipeline';
+import {returned} from '../../segment-a/tests/fixtures';
+let mutation=(r:any)=>r;
+class FakeWorker{onmessage:any;onerror:any;terminate(){}postMessage(m:any){queueMicrotask(()=>{const r={id:m.id,attempt:m.attempt,transactionId:m.transactionId,identity,sdnaHash:'a'.repeat(64),timestamp:new Date().toISOString(),results:[],artifacts:m.pairs.map((p:any)=>({uid:p.uid,envelopeHash:p.envelopeHash,sidecarHash:p.sidecarHash,accepted:true}))};this.onmessage({data:mutation(r)});});}}
+afterEach(()=>{vi.unstubAllGlobals();mutation=r=>r;});
+it.each(['transaction','attempt','validator','build','dependency','envelope','sidecar','stale','partial','forged'])('browser receiver blocks %s response',async kind=>{vi.stubGlobal('Worker',FakeWorker);vi.stubGlobal('location',{origin:'http://fixture.test'});const a=new SegmentA();await a.importPayload(JSON.stringify(await returned()),'fixture');a.decide('job-1','PUSH');const tx=await a.commit(a.prepareCommit().token,true,{runId:'run',candidateId:'candidate-test',pipelineVersion:'1'});mutation=r=>{if(kind==='transaction')r.transactionId='wrong';if(kind==='attempt')r.attempt='previous-attempt';if(['validator','build','dependency'].includes(kind))r.identity={...identity,[kind==='validator'?'validator':kind+'Hash']:'wrong'};if(kind==='envelope'||kind==='sidecar')r.artifacts[0][kind+'Hash']='wrong';if(kind==='stale')r.timestamp='1970-01-01T00:00:00.000Z';if(kind==='partial')r.artifacts=[];if(kind==='forged')r.attempt='untrusted';return r;};const bridge=new BrowserBridge();bridge.sdna='fixture-only';const result=await a.handoff(tx.id,bridge);expect(result.state).toBe('BLOCKED');expect(result.failures.length).toBeGreaterThan(0);expect(result.pairs).toEqual(tx.pairs);bridge.close();});

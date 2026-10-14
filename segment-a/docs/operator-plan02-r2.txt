@@ -1,0 +1,366 @@
+
+CODEX PLAN 02
+MARA SEGMENT A — DATA FLOW AND GATE REPORT
+REVISION 2
+
+MISSION
+Construct and verify the A1–A5 data-flow topology.
+
+Use the structural architecture from Plan 01.
+
+Identify actual component boundaries, allocate gate junctions, preserve existing contracts, and verify the complete route to B1.
+
+Do not redesign B1–B5.
+
+Do not modify C1–C5.
+
+Do not treat proposed wiring as verified implementation.
+
+ARCHITECTURAL DATA ROUTE
+
+OPERATOR
+   |
+   v
+A1 — COMPILER
+   |
+   | Search-scope JSON
+   v
+A2 — DISPATCH
+   |
+   | Manual copy / reserved folder / reserved API
+   v
+EXTERNAL RUNNER ENVIRONMENT
+   |
+   | Returned text or Markdown payloads
+   v
+A3 — STAGING
+   |
+   | Committed selections + source evidence
+   v
+A4 — STATE MINTING
+   |
+   | Traveling envelope + sidecar
+   v
+A5 — CERTIFICATION
+   |
+   | Two independently validated artifact routes
+   v
+B1 — EXISTING INGRESS
+
+INDEPENDENT THIRD INPUT
+
+OPERATOR-SUPPLIED SDNA
+   |
+   v
+B1 — EXISTING SDNA INGRESS
+
+The SDNA route is not an A-stage output.
+
+COMPONENT BOUNDARIES
+
+A1:
+Ingress — Operator search configuration
+Egress — Compiled search JSON
+
+A2:
+Ingress — Search JSON
+Egress — Manual JSON display/copy
+Reserved egress — Folder destination
+Reserved egress — Automated transport
+
+External runner:
+Ingress — Search instructions
+Egress — Job-result payload
+
+A3:
+Ingress — Runner-result text or Markdown
+Ingress — Reimported pinned-job payload
+Egress — Committed operator decisions and source corpus
+
+A4:
+Ingress — A3 committed state and evidence
+Egress — Traveling envelope
+Egress — Sidecar
+
+A5:
+Ingress — Traveling envelope
+Ingress — Sidecar
+Egress — Certified traveling envelope
+Egress — Certified sidecar
+Handoff control — B1 acceptance acknowledgment
+
+B1:
+Ingress — Traveling envelope
+Ingress — Sidecar
+Ingress — Independent candidate SDNA
+
+GATE NOTATION
+
+Component>G1: = Egress
+Component<G1: = Ingress
+Component_G1: = Bidirectional
+
+Each component maintains one local gate counter.
+
+Counters begin at G1.
+
+Ingress and egress share the same local sequence.
+
+Reserved endpoints consume gate addresses.
+
+Never reuse a gate address on the same component.
+
+Gate addresses identify endpoints, not artifact ownership or provenance.
+
+PROPOSED JUNCTION INVENTORY
+
+The following are logical connections.
+
+Assign final addresses only after component inventory and endpoint ordering are confirmed.
+
+J01
+Operator configuration → A1 ingress
+
+J02
+A1 JSON egress → A2 JSON ingress
+
+J03
+A2 manual-display endpoint
+
+J04
+A2 reserved folder-dispatch endpoint
+
+J05
+A2 reserved automated-dispatch endpoint
+
+J06
+A2 outbound payload → External runner ingress
+
+J07
+External runner results → A3 runner-result ingress
+
+J08
+Saved pinned-job payload → A3 reimport ingress
+
+J09
+A3 committed state → A4 committed-state ingress
+
+J10
+A3 source evidence → A4 evidence ingress
+
+J11
+A4 traveling envelope → A5 envelope ingress
+
+J12
+A4 sidecar → A5 sidecar ingress
+
+J13
+A5 certified envelope → B1 envelope ingress
+
+J14
+A5 certified sidecar → B1 sidecar ingress
+
+J15
+Operator-supplied SDNA → B1 SDNA ingress
+
+J16
+B1 acceptance acknowledgment → A5 handoff-control ingress
+
+These junction IDs identify logical connections, not assigned gate numbers.
+
+IMPORTANT ROUTING DISTINCTION
+
+A2's manual-copy endpoint is the currently enabled delivery mechanism.
+
+J06 describes the external logical delivery route, not an implemented automatic runner connection.
+
+Do not activate J06 as a software transport merely because A2 displays JSON.
+
+Similarly, B1's actual gate addresses must be verified from its existing implementation.
+
+Do not invent physical B1 endpoints.
+
+A3 DATA PRESERVATION
+
+Runner payloads may contain descriptions of different lengths.
+
+Preserve actual returned content.
+
+Do not require uniform description lengths.
+
+Cleaning may normalize presentation but must not invent facts or erase provenance.
+
+Duplicate handling must retain sufficient identity to trace repeated source records.
+
+The sidecar is the supporting source-evidence corpus.
+
+The envelope is the operational state and navigation artifact.
+
+The envelope references evidence through UIDs and source associations.
+
+A4 STATE MINTING
+
+A4 converts A3's committed decisions into authoritative artifact state.
+
+Only committed PUSH jobs become active downstream selections.
+
+PIN and PENDING remain outside the committed active set.
+
+REJECT records are excluded.
+
+Every active envelope UID must resolve to a corresponding sidecar record.
+
+The envelope must preserve relevant batch and search-scope identity.
+
+The sidecar must preserve evidence required by the existing B1 contract.
+
+Do not assume B1 accepts a particular job cardinality without inspecting its contract.
+
+A5 VALIDATION
+
+Check:
+- Local gate uniqueness
+- Correct direction
+- Component identity
+- Complete endpoint accounting
+- Required artifact fields
+- UID correspondence
+- Sidecar exclusion markings
+- Provenance and batch identity
+- Artifact integrity
+- Existing B1 contract compatibility
+
+Gate Validation Doctrine:
+
+GV-01 — Single local gate counter
+GV-02 — Direction must be evidenced
+GV-03 — Classify before allocating
+GV-04 — Complete source accounting
+GV-05 — Separate extraction from certification
+GV-06 — Preserve branch semantics
+GV-07 — Component identity fidelity
+
+Treat these as general validation rules, not historical model-specific corrections.
+
+A5 → B1 HANDSHAKE
+
+A5 performs local certification.
+
+A5 initiates the handoff.
+
+B1 receives the exact transmitted artifacts.
+
+B1 verifies the received artifact identities and integrity according to its existing contract.
+
+B1 returns acceptance or rejection.
+
+A5 retains transaction ownership until verified acceptance.
+
+An acknowledgment of connection alone is not acceptance.
+
+Partial transmission is not acceptance.
+
+A mismatch is not acceptance.
+
+Missing acknowledgment is not acceptance.
+
+The transaction must be traceable to the exact transmitted artifact versions.
+
+100% ACCEPTED OR 0% ACCEPTED.
+
+No partial release.
+
+No silent repair.
+
+No false completion receipt.
+
+If B1's current implementation lacks a compatible acknowledgment mechanism, report the integration gap.
+
+Do not modify B to manufacture compliance.
+
+B AND C AUTHORITY BOUNDARIES
+
+B1–B5 are existing completed components.
+
+C1–C5 are existing completed components.
+
+Their internal behavior is not part of this assignment.
+
+The existing B1 ingress contract determines the accepted A5 output shapes.
+
+Do not specify or alter B's internal sidecar disposal point.
+
+Do not redesign Spatial DNA processing.
+
+Do not alter Resume Factory input policy.
+
+The present assignment ends at B1's verified acceptance.
+
+CONTRACT DISCOVERY
+
+During construction, inspect:
+- Existing compiler types and schemas
+- Existing runner interfaces
+- Runner return formats
+- Existing UID generation
+- Sidecar and envelope representations
+- B1 ingress requirements
+- Artifact hashing and provenance requirements
+- Existing acknowledgment mechanisms
+
+For each finding, report:
+- Repository
+- Branch
+- File path
+- Relevant symbol or function
+- Existing contract
+- Required adaptation on the A side
+- Verification status
+
+Separate confirmed facts from proposed adaptations.
+
+Preserve upstream contracts whenever possible.
+
+Place necessary transformations at the appropriate A-stage boundary without moving B intelligence upstream.
+
+No source-data fabrication.
+
+NO-BREAK BUILD POLICY
+
+Build structural pipes first.
+
+Use clearly labeled temporary adapters or placeholders where shapes are unresolved.
+
+Do not modify existing upstream contracts to make an unfinished pipeline appear compatible.
+
+Do not modify B or C.
+
+Do not silently rewrite accepted artifacts.
+
+Do not merge to main without authorization.
+
+ACCEPTANCE EVIDENCE
+
+Provide:
+- Final gate-junction register
+- Component-to-gate inventory
+- Direction verification
+- Reserved endpoint inventory
+- Contract compatibility matrix
+- A3 evidence-preservation test
+- A4 UID-reconciliation test
+- A5 negative-path tests
+- B1 acceptance evidence when available
+- Exact unresolved integration blockers
+
+A structural test passing is not equivalent to B1 acceptance.
+
+Report these milestones separately:
+
+STRUCTURE COMPLETE
+CONTRACTS VERIFIED
+B1 HANDOFF ACCEPTED
+
+Do not mark a later milestone complete based solely on an earlier one.
+
+END PLAN 02

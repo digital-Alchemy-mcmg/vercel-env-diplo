@@ -1,0 +1,298 @@
+
+CODEX PLAN 01
+MARA SEGMENT A — A1 THROUGH A5
+STRUCTURAL CONSTRUCTION DIRECTIVE
+REVISION 2
+
+MISSION
+Build a functional A1–A5 pipeline by assembling existing components, preserving established contracts, and implementing the missing structural connections.
+
+Deployment target: Vercel.
+Target result: A working Segment A that prepares and delivers the required artifacts to the existing B1 ingress.
+
+AUTHORITY AND SCOPE
+- Operator retains final architectural authority.
+- Codex implements and reports findings.
+- Existing compiler and runner contracts are preserved.
+- B1–B5 is an existing downstream system.
+- C1–C5 is an existing downstream Resume Factory.
+- No redesign, refactoring, or modification of B or C is authorized.
+- No assumption that existing A code already follows the new five-stage boundaries.
+- Do not remove legacy functionality merely because its stage numbering differs.
+- Identify reusable existing functionality before creating replacements.
+- No unapproved merges to main.
+
+EXISTING SYSTEM RELATIONSHIP
+
+A = Search preparation, inbound staging, state minting, and certified handoff.
+
+B = Existing Spatial DNA processing and validation pipeline.
+
+C = Existing Resume Factory.
+
+A → B → C is the established system direction.
+
+This assignment concerns A only.
+
+B and C are not implementation targets.
+
+The existing B1 ingress contract is the acceptance target for A5.
+
+A1 — SEARCH-SCOPE COMPILER
+
+Reuse the existing compiler.
+
+The operator enters:
+- SOC and occupational information
+- Job categories and search targets
+- Prerequisites
+- Search parameters
+- Other fields already supported by the compiler
+
+The compiler produces one search-scope JSON artifact per invocation.
+
+The same compiler can be used repeatedly for different search scopes.
+
+Do not bind a compiler instance permanently to a runner.
+
+Do not redesign the existing compiler's internal schema.
+
+A2 — OUTBOUND DISPATCH
+
+Receive the JSON produced by A1.
+
+Provide three dispatch endpoints:
+
+1. Manual display and copy
+   ENABLED
+   Display the complete JSON in a selectable text area.
+
+2. Folder destination
+   VISIBLE BUT DISABLED
+   Reserve the interface for a future configured destination.
+
+3. Automated transport
+   VISIBLE BUT DISABLED
+   Reserve an interface for API, Zapier, or other transport.
+
+Do not implement external runner execution.
+
+Do not require runner connectivity for A1 or A2 to function.
+
+The outbound search JSON should preserve existing batch identity, search parameters, and runner return instructions wherever the existing contracts support them.
+
+EXTERNAL RUNNER BOUNDARY
+
+Runners operate outside Segment A.
+
+They receive search instructions through the operator's chosen transport.
+
+They perform job searches and return results.
+
+Segment A must not require a particular runner vendor, execution environment, or transport.
+
+A3 — INBOUND STAGING
+
+Create an operator-controlled staging workspace.
+
+Accept:
+- Plain-text uploads
+- Markdown uploads
+- Pasted plain text
+- Multiple incoming runner payloads
+
+Use the existing return contracts where available.
+
+Perform limited preparation:
+- Delineate individual job records
+- Associate records with job UIDs
+- Perform non-destructive text cleaning
+- Identify duplicates
+- Organize source material into a navigable text corpus
+
+Do not conduct Spatial DNA analysis.
+
+Do not score job suitability.
+
+Do not rewrite descriptions to match B.
+
+Do not invent missing source information.
+
+The interface displays individual jobs with sufficient identifying information for operator review.
+
+Supported states:
+
+PUSH
+Job selected for the next commitment.
+
+PIN
+Job retained for later consideration.
+
+REJECT
+Requires explicit confirmation.
+After confirmation, mark excluded, dim the row, and prevent restoration within the current staging session.
+
+PENDING
+Job remains available for review.
+
+The sidecar staging corpus preserves returned evidence and records exclusions.
+
+The workspace is intentionally ephemeral.
+
+Do not introduce a database or automatic draft-persistence subsystem.
+
+Provide a plain-text export for pinned jobs.
+
+The export must preserve enough original content, UID identity, and context for reimport through A3.
+
+The operator is responsible for saving the exported text.
+
+A3 COMMITMENT
+
+The operator explicitly commits the selected PUSH jobs.
+
+Before a destructive transition:
+- Warn that staging state may be lost.
+- Identify what is being preserved.
+- Identify what must be manually saved.
+- Require affirmative operator confirmation.
+
+Cancellation must leave the workspace unchanged.
+
+Do not clear staging before the receiving stage has successfully committed the transferred state.
+
+A4 — STATE RESOLUTION AND MINTING
+
+Receive A3's committed selections and staged evidence.
+
+Resolve:
+- Selected job UIDs
+- Source references
+- Batch identity
+- Operator decisions
+- Exclusion status
+- Relevant search-scope context
+
+Mint the traveling envelope.
+
+Finalize the sidecar representation for the committed transaction.
+
+The traveling envelope carries operational state, navigation information, UID references, and information needed for downstream processing and UI control.
+
+The sidecar carries source evidence for detailed lookup.
+
+Every selected UID must resolve to the correct sidecar record.
+
+Rejected records must not become active envelope entries.
+
+Do not infer missing evidence.
+
+Do not silently change operator selections.
+
+A5 — CERTIFICATION AND HANDOFF
+
+Receive the committed envelope and sidecar.
+
+Validate:
+- Artifact identity
+- Required fields
+- UID correspondence
+- Source provenance
+- Exclusion integrity
+- Sidecar references
+- Content integrity
+- Compatibility with the existing B1 ingress contract
+
+Prepare two independent outbound artifact paths:
+
+Traveling envelope → B1 envelope ingress
+Sidecar → B1 sidecar ingress
+
+Spatial DNA is an independent Operator-supplied input to B1.
+
+Segment A must not create, transform, or export candidate SDNA.
+
+A5 owns the handoff transaction until B1 confirms receipt and acceptance of the exact transmitted artifact versions.
+
+A5 local validation alone is insufficient.
+
+Acceptance rule:
+
+100% VERIFIED = ACCEPTED
+ANYTHING LESS = ZERO ACCEPTED
+
+On mismatch, incomplete transfer, rejection, or missing acknowledgment:
+- Block completion.
+- Preserve the committed artifacts.
+- Record the exact failure.
+- Do not report successful handoff.
+- Do not silently repair the artifacts.
+
+B1–B5 and C1–C5 remain unchanged.
+
+DESTRUCTIVE TRANSITION POLICY
+
+Every destructive operation requires an explicit warning and confirmation.
+
+Never silently discard operator decisions or source material.
+
+A failed downstream commitment must not clear the upstream state.
+
+IMPLEMENTATION ORDER
+
+First inspect the existing A implementation and identify reusable components.
+
+Then build the five-stage structural shells and data routes.
+
+Implement the A1/A2 manual compiler-to-JSON path.
+
+Implement A3 inbound staging and operator controls.
+
+Implement A4 artifact minting.
+
+Implement A5 validation and handoff interfaces.
+
+Discover actual data contracts during construction.
+
+Keep unresolved interfaces explicitly identified.
+
+Do not invent permanent schemas to fill unknowns.
+
+Do not activate B1 transmission until actual contract compatibility has been verified.
+
+TESTING
+
+Demonstrate:
+- Repeated compiler invocations
+- Independent JSON outputs
+- Manual JSON copy
+- Multiple runner payload imports
+- Variable-length job descriptions
+- UID delineation
+- Duplicate detection
+- Push, pin, reject, and pending states
+- Rejection confirmation
+- Pinned-job export and reimport
+- Destructive-transition warning
+- A4 envelope and sidecar minting
+- UID and exclusion reconciliation
+- A5 mismatch blocking
+- A5 acknowledgment handling
+
+DELIVERABLES
+
+Working A1–A5 structural implementation.
+
+Stage-by-stage test results.
+
+Existing-component reuse inventory.
+
+Unresolved contract register.
+
+B1 compatibility findings.
+
+Change manifest with file paths and commit references.
+
+Do not claim completion without test evidence.
+
+END PLAN 01

@@ -1,0 +1,15 @@
+{
+  "name": "vercel-env-diplo",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "npm --prefix integrated run dev",
+    "build": "npm --prefix integrated run build",
+    "test": "npm --prefix integrated test",
+    "test:e2e": "npm --prefix integrated run test:e2e",
+    "verify:source": "node scripts/verify-snapshot.mjs"
+  },
+  "engines": {
+    "node": ">=22.12.0"
+  }
+}

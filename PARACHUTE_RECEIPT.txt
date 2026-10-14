@@ -1,0 +1,62 @@
+# PARACHUTE RECOVERY RECEIPT
+# Generated: 2026-10-11T18:11:45.860Z
+# Repository: digital-Alchemy-mcmg/maraSEGMENTS
+# Branch: segment/B
+
+## RUNTIME STATE
+No active run
+
+
+
+
+
+## ARCHIVE CONTENTS: 49 entries
+## SOURCE FILES: 47
+
+  package.json  7bc5d6d1513eeb4d6f051a689a380c3eaba2cfc256f2620747b3f9373c092c3f
+  webapp/package.json  f7a9f9770122e3db221182959dacbcb7b2581106c2102cecb5663b912c0ce145
+  webapp/tsconfig.json  ee40994b7819962a23b2fe7767fceaf059eea06690868d432dd280b422ce64d5
+  webapp/tsconfig.node.json  66c759ea9a276b56262d8c831e20edb02f606819b94bc84ce506521c8959da91
+  webapp/vite.config.ts  27790338b2958e594a8cf2b7c05699785cacedc1d675bd0100803beba11bc637
+  webapp/vitest.config.ts  6cadbaaba97ea4481e532a897860236d76323ed51a1fca18311e6a76e314a274
+  webapp/index.html  b2d2fc226a3b34094b5e6ce815c8ab3ee34e0c1f17c6cb9e2f7480389aa8d602
+  webapp/testSetup.ts  a46d66851af2c056e805fdd574bf5ec3adb1181c43c5e41f0a1c592e338afe64
+  webapp/README.md  749ba82e0f7f6528d3611c5b74870b6fe2ee98243bf84ecc3a3d8b507291a3c0
+  webapp/gitignore  d373417ea2a8844e3b7a1515aab123e90fbeb4b7225144d55d243d9f6f04f73a
+  webapp/.prettierrc  2de5f81956f7ce4044e2ebecad38bc588ff0a839589f0558c14139b7d4346be7
+  webapp/.prettierignore  cb1f05c9690bf88f841198dbeebf75cf8417ec0a14d9513deb85b338a531d87f
+  webapp/src/App.tsx  b27e22edcf40c82cc110b16195c5fe29ea46f6eb6d3a6d67c17fd2d434f23568
+  webapp/src/main.tsx  3a852c022be8bbbbec5ae310cab7aeb660b2281ffad9b19e0ba67245e7ea23ed
+  webapp/src/vite-env.d.ts  65996936fbb042915f7b74a200fcdde7e410f32a669b1ab9597cfaa4b0faddb5
+  webapp/src/b/types.ts  92ee59f77a1d76940dd94f586a3f75008f2c7fcb9d8b355b0b1c7f65b12dc227
+  webapp/src/b/engine.ts  d63997654f1a222025100f64321082199c87f1aff2dc140206f8b4aacadfb2c2
+  webapp/src/b/contracts.ts  805325f813234d92e522790a14cc9b7503c26a8a5a1417786935907d84c4fe2f
+  webapp/src/b/test-fixtures.ts  5159c62fd8344ae1427545c1cbd5a1da6e655964259af773e3e287dc58f703c8
+  webapp/src/b/adapters/standalone-adapter.ts  0a82b6defb66573262c3696e5f3dbf9a28008d50b687f2807ebca0ee2a3bb4c4
+  webapp/src/b/adapters/compiled-adapter.ts  60aa1a6067c9188178fdcb8ce10298e12fe1340bcaf88285a5157eb3ce353b2e
+  webapp/src/b/authority/canonical-sdna.ts  d748ce2b7e600f2702f6cb35cfc155ea21ab3de90c70926cf53921323ba971dd
+  webapp/src/b/authority/envelope.ts  7fcefb8cb742bd3e75460ac6c4f51a1446e1184615e2c7b8da20bdc61fa21d69
+  webapp/src/b/authority/sidecar.ts  c81f656628e4242519c23d7b08cea7a41c7b06473dcbe71a263a050c79ddad8d
+  webapp/src/b/authority/ingress-gate.ts  15c32aed18d79f3087c9c7bbf3d7250410b1774d7b1ce8fbc10a8d4485784cc1
+  webapp/src/b/authority/access-control.ts  dcccb6dfda59ad3ddbaf7c5f077510f4202f70d25fc2924cecd0a4cde0514b79
+  webapp/src/b/stages/b1-decouple.ts  a4f5961248e4bb97dfda5e7f16999ff374f41ed7e4bab0d29dd92d4eb0cba527
+  webapp/src/b/stages/b2-tree.ts  895255b66d87c47c080c6e3b667978aabfd8c8cd7a041c36a8151351200983ad
+  webapp/src/b/stages/b3-binding.ts  996b1d93b88b39f96dc1172b3f0f21792c299043a3cc030de5732a2a63dc88c6
+  webapp/src/b/stages/b4-audit.ts  4acc6fd9cc6c447715dc4c91cb08c236901d9fcd05d5c6dd68d4d2595f7bda23
+  webapp/src/b/stages/b5-prisms.ts  1ed53cd70aa72dd6fd9e17a950c81a966627324973b66c90ba35b6f18281ad7d
+  webapp/src/b/verification/t06-trace.ts  bc79d46dbf1212d07682654f06f17e5ffcaf8ff88b023b53c15f0722a0e45bb6
+  webapp/src/b/verification/c1-readiness.ts  568cf56ccd9e545eb521c7870ac4600731f892c1735e75dd78915fae8fc34c2d
+  webapp/src/b/verification/termination.ts  c35f6bb466a1138ef407a37ac286a5658795324c9516838a6f4510adb7743b32
+  webapp/src/b/parachute/zip-writer.ts  ce83be8aa0af03ac9b2f1ee751c5671cdb08b8ba9d63ba1e50e6360cada22400
+  webapp/src/b/parachute/parachute-engine.ts  5d57d859bf4ded3fc5343bc03892085d06965ec547c3543c4f10de11c815ff61
+  webapp/src/b/parachute/source-registry.ts  d616c8b90ac9741a6a18dabd391b68febc8fa73eb46ad14e1e78414350982813
+  webapp/src/components/b/styles.ts  8b5409534ca85be7722871318cdfcd6e2d93969abdece67f9039896678ff4055
+  webapp/src/components/b/BIngress.tsx  d3b618fcb8c70054afd930d5965b9a612436fcdd6a32d0eb0e851dfd1951da59
+  webapp/src/components/b/B1Inspector.tsx  1d07781a4eba0beea61ddc143d5c4b5c9de6ef64bf88b32d39bf18386c840658
+  webapp/src/components/b/B2TreeView.tsx  e7c504cb7387a00d267cbdd343fef72fcf22bdf35078e2519969234185ee3de8
+  webapp/src/components/b/B3BindingView.tsx  b4b495cf2eb8a93f1b106b685ce89a33356a921c88b8336d9549914ed5f25748
+  webapp/src/components/b/B4AuditView.tsx  bed080398a601b02de23b0783e006fd36e82a739604b11f818b81d1bbdeeb53e
+  webapp/src/components/b/B5ProjectionView.tsx  929f8e43e2d4d3228f4474343c48dbaf9e06295ba218d709975632922fd59494
+  webapp/src/components/b/BCodeInspector.tsx  7c780e350f112869554b94dd999964214520770977add0d0744e4cafb9c3afd0
+  webapp/src/components/b/BTestHarness.tsx  585d1945cd677b2567bebdd845f68088bf47f168dfc347c8794e3f525458cf7f
+  webapp/src/components/b/TraceHandoff.tsx  5751c8b0829189d1309028c1d35ae7d4c9c1ea7e4063fc3dcf2893e346fc3c96
